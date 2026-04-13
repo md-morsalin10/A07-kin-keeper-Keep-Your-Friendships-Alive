@@ -1,0 +1,122 @@
+[
+    {
+        "id": 1,
+        "name": "Sarah Ahmed",
+        "picture": "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
+        "email": "sarah.dev@gmail.com",
+        "days_since_contact": 18,
+        "status": "overdue",
+        "tags": ["WORK", "TECH"],
+        "bio": "Former classmate and React mentor. We usually catch up over coffee to discuss MERN stack updates.",
+        "goal": 14,
+        "next_due_date": "2026-04-10"
+    },
+    {
+        "id": 2,
+        "name": "Tanvir Rahman",
+        "picture": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
+        "email": "tanvir.sports@yahoo.com",
+        "days_since_contact": 5,
+        "status": "on-track",
+        "tags": ["HOBBY", "FOOTBALL"],
+        "bio": "A massive Messi fan from the neighborhood. We play football together every Friday afternoon.",
+        "goal": 7,
+        "next_due_date": "2026-04-18"
+    },
+    {
+        "id": 3,
+        "name": "Nadia Islam",
+        "picture": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80",
+        "email": "nadia.designs@outlook.com",
+        "days_since_contact": 13,
+        "status": "almost due",
+        "tags": ["WORK", "UI/UX"],
+        "bio": "A talented designer who helps me understand Figma layouts. We are planning a joint project soon.",
+        "goal": 14,
+        "next_due_date": "2026-04-14"
+    },
+    {
+        "id": 4,
+        "name": "Amit Das",
+        "picture": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d",
+        "email": "amit.das88@gmail.com",
+        "days_since_contact": 45,
+        "status": "overdue",
+        "tags": ["COLLEGE"],
+        "bio": "Close friend from Dinajpur Polytechnic. We lost touch after graduation and need to reconnect.",
+        "goal": 30,
+        "next_due_date": "2026-03-25"
+    },
+    {
+        "id": 5,
+        "name": "Ariful Haque",
+        "picture": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e",
+        "email": "arif.engr@gmail.com",
+        "days_since_contact": 2,
+        "status": "on-track",
+        "tags": ["WORK", "JS"],
+        "bio": "Coding partner for GitHub tracker projects. We do pair programming sessions almost every night.",
+        "goal": 3,
+        "next_due_date": "2026-04-15"
+    },
+    {
+        "id": 6,
+        "name": "Maliha Zaman",
+        "picture": "https://images.unsplash.com/photo-1544005313-94ddf0286df2",
+        "email": "maliha.z@live.com",
+        "days_since_contact": 25,
+        "status": "overdue",
+        "tags": ["FAMILY", "SCHOOL"],
+        "bio": "School friend from Nilphamari Govt Girls High School. We enjoy talking about hometown memories.",
+        "goal": 21,
+        "next_due_date": "2026-04-05"
+    },
+    {
+        "id": 7,
+        "name": "Sajid Hasan",
+        "picture": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d",
+        "email": "sajid.h@gmail.com",
+        "days_since_contact": 28,
+        "status": "almost due",
+        "tags": ["HOBBY", "GYM"],
+        "bio": "My gym partner who keeps me motivated. He is currently helping me with a health roadmap.",
+        "goal": 30,
+        "next_due_date": "2026-04-16"
+    },
+    {
+        "id": 8,
+        "name": "Fariha Sultana",
+        "picture": "https://images.unsplash.com/photo-1554151228-14d9def656e4",
+        "email": "fariha.sul@gmail.com",
+        "days_since_contact": 8,
+        "status": "on-track",
+        "tags": ["WORK", "BLOG"],
+        "bio": "Met during a tech seminar. She writes blogs about software engineering and project management.",
+        "goal": 14,
+        "next_due_date": "2026-04-20"
+    },
+    {
+        "id": 9,
+        "name": "Rahat Kabir",
+        "picture": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6",
+        "email": "rahat.kabir@gmail.com",
+        "days_since_contact": 1,
+        "status": "on-track",
+        "tags": ["COLLEGE", "TECH"],
+        "bio": "A brilliant developer interested in Next.js. We often share resources and build small tools together.",
+        "goal": 7,
+        "next_due_date": "2026-04-21"
+    },
+    {
+        "id": 10,
+        "name": "Zarin Tasnim",
+        "picture": "https://images.unsplash.com/photo-1534528741775-53994a69daeb",
+        "email": "zarin.tasnim@yahoo.com",
+        "days_since_contact": 20,
+        "status": "overdue",
+        "tags": ["FAMILY", "DHAKA"],
+        "bio": "A creative cousin who loves photography. She often gives me feedback on my UI/UX designs.",
+        "goal": 15,
+        "next_due_date": "2026-04-08"
+    }
+]

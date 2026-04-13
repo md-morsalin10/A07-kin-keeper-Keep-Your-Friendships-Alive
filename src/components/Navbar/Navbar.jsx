@@ -11,15 +11,15 @@ const Navbar = () => {
                 <div className="flex-none">
                     <ul className="menu menu-horizontal px-1">
                         <li><NavLink
-                            className={({ isActive }) => isActive && 'bg-green-500'}
+                            className={({ isActive }) => isActive ? 'bg-green-500' : ''}
                             to={"/"}>Home</NavLink></li>
 
                         <li><NavLink
-                            className={({ isActive }) => isActive && 'bg-green-500'}
+                            className={({ isActive }) => isActive ? 'bg-green-500' : ''}
                             to={"/timeline"}>Timeline</NavLink></li>
 
                         <li><NavLink
-                            className={({ isActive }) => isActive && 'bg-green-500'}
+                            className={({ isActive }) => isActive ? 'bg-green-500' : ''}
                             to={"/stats"}>Stats</NavLink></li>
                     </ul>
                 </div>
