@@ -6,7 +6,7 @@ import AllFriendsCard from '../../components/HomeSection/AllFriendsCard/AllFrien
 const HomePage = () => {
    
     return (
-        <div className='bg-base-200'>
+        <div className='bg-base-200 pb-20'>
             <HomeContent/>
             <CardSection/>
             <AllFriendsCard/>
