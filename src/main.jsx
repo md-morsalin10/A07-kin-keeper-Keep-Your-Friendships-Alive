@@ -5,8 +5,8 @@ import { RouterProvider } from 'react-router/dom'
 import { createBrowserRouter } from 'react-router';
 import RootLayout from './layout/RootLayout';
 import HomePage from './pages/HomePage/HomePage';
-import TrendingPage from './pages/TrendingPage/TrendingPage';
 import StatsPage from './pages/StatsPage/StatsPage';
+import Timeline from './pages/Timeline/Timeline';
 
 const router = createBrowserRouter([
   {
@@ -18,8 +18,8 @@ const router = createBrowserRouter([
         element: <HomePage/>
       },
       {
-        path:"/trending",
-        element: <TrendingPage/>
+        path:"/timeline",
+        element: <Timeline/>
       },
       {
         path:"/stats",

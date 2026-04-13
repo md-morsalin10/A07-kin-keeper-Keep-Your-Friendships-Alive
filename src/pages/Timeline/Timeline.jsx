@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TrendingPage = () => {
+const Timeline = () => {
     return (
         <div>
             <p>trending page</p>
@@ -8,4 +8,4 @@ const TrendingPage = () => {
     );
 };
 
-export default TrendingPage;
+export default Timeline;
