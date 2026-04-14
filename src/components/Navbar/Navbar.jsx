@@ -6,7 +6,7 @@ import { NavLink } from 'react-router';
 
 const Navbar = () => {
     return (
-        <div className='bg-base-100 shadow-sm'>
+        <div className='bg-base-100 shadow-sm sticky top-0 z-50'>
             <div className="navbar container mx-auto">
                 <div className="flex-1">
                     <h3 className='text-[#1F2937] text-xl font-extrabold'>Keen<span className='text-[#244D3F] font-bold'>Keeper</span></h3>

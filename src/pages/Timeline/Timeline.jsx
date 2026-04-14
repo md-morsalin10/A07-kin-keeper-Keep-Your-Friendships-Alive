@@ -1,33 +1,67 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { FriendsContext } from '../../context/FriendsContext';
-import CallingInfo from './CallingInfo/CallingInfo';
-import TextInfo from './TextInfo/TextInfo';
-import VideoDetails from './VideoDetails/VideoDetails';
+import TimelineCard from './TimelineCard/TimelineCard';
 
 const Timeline = () => {
-    const { callDetails,textDetails,videoDetails } = useContext(FriendsContext);
-    
+    const { callDetails, textDetails, videoDetails } = useContext(FriendsContext);
+
+    const [filter, setFilter] = useState('all');
+
+    const hasCalls = callDetails.length > 0;
+    const hasTexts = textDetails.length > 0;
+    const hasVideos = videoDetails.length > 0;
+
+    const isDataEmpty =
+        (filter === 'all' && !hasCalls && !hasTexts && !hasVideos) ||
+        (filter === 'call' && !hasCalls) ||
+        (filter === 'text' && !hasTexts) ||
+        (filter === 'video' && !hasVideos);
 
     return (
-        <div className='container mx-auto'>
-            <div className='py-6'>
-                <h2 className='text-5xl font-bold text-[#1F2937]'>Timeline</h2>
+        <div className='container mx-auto px-4 h-full py-5'>
+            <div className='flex justify-between py-8 items-center border border-gray-50 mt-5 p-5 rounded-2xl'>
+                <div>
+                    <h2 className='text-4xl font-bold text-[#1F2937]'>Timeline</h2>
+                </div>
+                <div>
+                    <div className="dropdown dropdown-bottom">
+                        <div tabIndex={0} role="button" className="btn text-gray-500 m-1">Short by {filter === "all" ? "⬇️" : filter === "call" ? "call"
+                            : filter === "text" ? "text" : "video"} </div>
 
+                        <ul tabIndex="-1" className="dropdown-content menu bg-base-100  rounded-box z-1 w-52 p-2 shadow-sm">
+                            <li onClick={() => setFilter('call')}><a>Call</a></li>
+                            <li onClick={() => setFilter('text')}><a>Text</a></li>
+                            <li onClick={() => setFilter('video')}><a>Video</a></li>
+                            <li onClick={() => setFilter('all')}><a>All</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div>
-                <div>
-                    {
-                        callDetails.map(frd=> <CallingInfo frd={frd} key={frd.id}></CallingInfo>)
-                    }
+
+            {isDataEmpty && <div>
+                <div className='flex flex-col items-center justify-center py-20 bg-gray-50 rounded-3xl border-2  border-gray-200'>
+
+                    <h3 className='text-xl font-semibold text-gray-500'>No {filter === 'all' ? 'Interactions'
+                        : filter === "call" ? "Call Interactions"
+                            : filter === "text" ? "Text Interactions"
+                                : "Video Interactions"} Found</h3>
+
+                    <p className='text-gray-400'>There's nothing to show in your timeline right now.</p>
                 </div>
-                <div>
-                    {textDetails.map(frd=> <TextInfo frd={frd} key={frd.id}></TextInfo>)}
-                </div>
-                <div>
-                    {
-                        videoDetails.map(frd=> <VideoDetails frd={frd} key={frd.id}></VideoDetails>)
-                    }
-                </div>
+                </div>}
+
+            <div className='space-y-4'>
+                {(filter === 'all' || filter === 'call') &&
+                    callDetails.map(frd=> <TimelineCard frd={frd} type="call" key={frd.id}></TimelineCard>)
+                }
+
+                {(filter === 'all' || filter === 'text') &&
+                    textDetails.map(frd=> <TimelineCard frd={frd} type="text" key={frd.id}></TimelineCard>)
+                }
+
+                {(filter === 'all' || filter === 'video') &&
+                    videoDetails.map(frd=> <TimelineCard frd={frd} type="video" key={frd.id}></TimelineCard>)
+                }
             </div>
         </div>
     );
