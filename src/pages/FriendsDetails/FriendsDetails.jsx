@@ -1,16 +1,18 @@
-import React from 'react';
+import { useContext } from 'react';
 import { BiSolidTrash } from 'react-icons/bi';
 import { FiEdit, FiPhoneCall } from 'react-icons/fi';
 import { IoIosVideocam, IoMdArchive, IoMdClock, IoMdText } from 'react-icons/io';
 import { MdHistory } from 'react-icons/md';
 import { useLoaderData, useParams } from 'react-router';
+import { FriendsContext } from '../../context/FriendsContext';
 
 const FriendsDetails = () => {
+    const { handleCall,handleText,handleVideo } = useContext(FriendsContext)
     const params = useParams()
     const friendsData = useLoaderData();
     const expectedFriends = friendsData.find((friend) => friend.id == params.id);
-    console.log("from details", expectedFriends);
     const { name, days_since_contact, picture, tags, status, bio, next_due_date, goal } = expectedFriends
+
 
     return (
         <div className='bg-base-300'>
@@ -77,16 +79,26 @@ const FriendsDetails = () => {
                             </div>
                             <div className="card p-6 border border-gray-100 bg-white rounded-2xl shadow-sm">
                                 <h3 className="text-[#244D3F] font-bold mb-3">Quick Check-In</h3>
+
                                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                                    <div className='flex flex-col justify-center items-center py-4 btn h-full'>
+
+                                    <div 
+                                    onClick={() => handleCall(expectedFriends)}
+                                    className='flex flex-col justify-center items-center py-4 btn h-full'>
                                         <FiPhoneCall className='h-5 w-5' />
                                         <button className=" btn-outline border-gray-100  text-[#244D3F]">Call</button>
                                     </div>
-                                    <div className='flex flex-col justify-center items-center py-4 btn h-full'>
+
+                                    <div 
+                                    onClick={() => handleText(expectedFriends)}
+                                    className='flex flex-col justify-center items-center py-4 btn h-full'>
                                         <IoMdText className='h-5 w-5' />
                                         <button className="border-gray-100 text-[#244D3F]">Text</button>
                                     </div>
-                                    <div className='flex flex-col justify-center items-center py-4 btn h-full'>
+
+                                    <div
+                                      onClick={() => handleVideo(expectedFriends)} 
+                                      className='flex flex-col justify-center items-center py-4 btn h-full'>
                                         <IoIosVideocam className='h-5 w-5' />
                                         <button className="border-gray-100 text-[#244D3F]">Video</button>
                                     </div>
@@ -95,7 +107,7 @@ const FriendsDetails = () => {
                         </div>
 
 
-                        <div className="card p-6 border bg-white rounded-2xl space-y-4 shadow-sm">
+                        <div className="card p-6 border border-gray-100 bg-white rounded-2xl space-y-4 shadow-sm">
                             <div className='flex justify-between items-center p-2'>
                                 <h3 className="text-[#244D3F] font-bold">Recent Interactions</h3>
                                 <p className='text-[12px] btn font-medium '><MdHistory /> Full History</p>

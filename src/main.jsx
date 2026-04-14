@@ -8,28 +8,29 @@ import HomePage from './pages/HomePage/HomePage';
 import StatsPage from './pages/StatsPage/StatsPage';
 import Timeline from './pages/Timeline/Timeline';
 import FriendsDetails from './pages/FriendsDetails/FriendsDetails';
+import FriendsProvider from './context/FriendsProvider';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <RootLayout/>,
-    children:[
+    element: <RootLayout />,
+    children: [
       {
         path: "/",
-        element: <HomePage/>
+        element: <HomePage />
       },
-       {
-        path:"/:id",
+      {
+        path: "/:id",
         loader: () => fetch('/data.json'),
-        element: <FriendsDetails/>
+        element: <FriendsDetails />
       },
       {
-        path:"/timeline",
-        element: <Timeline/>
+        path: "/timeline",
+        element: <Timeline />
       },
       {
-        path:"/stats",
-        element:<StatsPage/>
+        path: "/stats",
+        element: <StatsPage />
       }
     ],
     errorElement: <h2>page not found</h2>
@@ -37,7 +38,9 @@ const router = createBrowserRouter([
 ]);
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
+  <FriendsProvider>
+    <StrictMode>
       <RouterProvider router={router} />,
-  </StrictMode>,
+    </StrictMode>,
+  </FriendsProvider>
 )
