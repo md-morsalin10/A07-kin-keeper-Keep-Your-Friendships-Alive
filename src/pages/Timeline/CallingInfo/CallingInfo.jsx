@@ -2,7 +2,6 @@ import React from 'react';
 import { FiPhoneCall } from 'react-icons/fi';
 
 const CallingInfo = ({frd}) => {
-    console.log("from frd",frd);
      const { name } = frd
     
     return (

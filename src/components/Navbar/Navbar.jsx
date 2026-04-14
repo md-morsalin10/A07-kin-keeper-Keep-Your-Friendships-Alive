@@ -1,4 +1,7 @@
 import React from 'react';
+import { IoMdTime } from 'react-icons/io';
+import { RiHome4Line } from 'react-icons/ri';
+import { TfiStatsUp } from 'react-icons/tfi';
 import { NavLink } from 'react-router';
 
 const Navbar = () => {
@@ -10,17 +13,17 @@ const Navbar = () => {
                 </div>
                 <div className="flex-none">
                     <ul className="menu menu-horizontal px-1">
-                        <li><NavLink
-                            className={({ isActive }) => isActive ? 'bg-green-500' : ''}
-                            to={"/"}>Home</NavLink></li>
+                        <li className='mr-2'><NavLink
+                            className={({ isActive }) => isActive ? 'bg-[#244D3F] text-white' : 'text-[#64748B]'}
+                            to={"/"}><RiHome4Line />Home</NavLink></li>
+
+                        <li className='mr-2'><NavLink
+                            className={({ isActive }) => isActive ? 'bg-[#244D3F] text-white' : 'text-[#64748B]'}
+                            to={"/timeline"}><IoMdTime/>Timeline</NavLink></li>
 
                         <li><NavLink
-                            className={({ isActive }) => isActive ? 'bg-green-500' : ''}
-                            to={"/timeline"}>Timeline</NavLink></li>
-
-                        <li><NavLink
-                            className={({ isActive }) => isActive ? 'bg-green-500' : ''}
-                            to={"/stats"}>Stats</NavLink></li>
+                            className={({ isActive }) => isActive ? 'bg-[#244D3F] text-white' : 'text-[#64748B]'}
+                            to={"/stats"}><TfiStatsUp/>Stats</NavLink></li>
                     </ul>
                 </div>
             </div>

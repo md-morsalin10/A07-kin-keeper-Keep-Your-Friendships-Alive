@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FriendsContext } from "./FriendsContext";
+import { toast } from "react-toastify";
 
 
 
@@ -10,16 +11,18 @@ const FriendsProvider = ({ children }) => {
     const [videoDetails, setVideoDetails] = useState([]);
 
     const handleCall = (expectedFriends) => {
-        // const callDetails = details.find((item )=> item.id === expectedFriends.id);
-        setCallDetails([...callDetails, expectedFriends])
+        setCallDetails([...callDetails, expectedFriends]);
+         toast.success("Audio Calling..");
     }
 
     const handleText =(expectedFriends)=>{
         setTextDetails([...textDetails, expectedFriends])
+         toast.success(`${expectedFriends.name} Text send`);
     }
 
     const handleVideo = (expectedFriends) =>{
-        setVideoDetails([...videoDetails, expectedFriends])
+        setVideoDetails([...videoDetails, expectedFriends]);
+        toast.success("Video Calling..");
     }
 
     const data = {
