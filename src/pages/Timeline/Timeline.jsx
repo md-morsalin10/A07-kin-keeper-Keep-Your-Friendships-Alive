@@ -25,9 +25,9 @@ const Timeline = () => {
                 </div>
                 <div>
                     <div className="dropdown dropdown-bottom">
-                        <div tabIndex={0} role="button" className="btn text-gray-500 m-1"
-                        >Short by {filter === "all" ? "⬇️" : filter === "call" ? "call"
-                            : filter === "text" ? "text" : "video"} 
+                        <div tabIndex={0} role="button" className="btn w-30 text-gray-500 m-1"
+                        >{filter === "all" ? "Short by⬇️" : filter === "call" ? "Call"
+                            : filter === "text" ? "Text" : "Video"} 
                         </div>
 
                         <ul tabIndex="-1" className="dropdown-content menu bg-base-100  rounded-box z-1 w-52 p-2 shadow-sm">

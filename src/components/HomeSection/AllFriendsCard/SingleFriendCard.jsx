@@ -2,14 +2,20 @@ import React from 'react';
 import { Link } from 'react-router';
 
 const SingleFriendCard = ({ friend }) => {
-    // console.log(friend);
+    
     const {id, name, days_since_contact, picture, tags, status } = friend
 
     return (
-        <Link to={`/${id}`} className='border border-gray-50 rounded-2xl shadow-2xl bg-white p-5'>
+        <Link
+         to={`/${id}`} 
+        className='group border border-gray-50 rounded-2xl shadow-lg bg-white p-5 transition-all duration-300 hover:shadow-2xl hover:border-green-400 hover:-translate-y-2 hover:scale-[1.02] ease-in-out'>
+
             <div className='flex justify-center items-center'>
-                <div className='flex justify-center items-center h-24 w-24 rounded-full overflow-hidden border-2 border-gray-100 mb-4'>
-                    <img src={picture} className='h-full w-full object-cover' alt="" />
+                <div 
+                className='flex justify-center items-center h-24 w-24 rounded-full overflow-hidden border-2 border-gray-100 mb-4 transition-transform duration-500 group-hover:border-green-400 ease-in-out'
+                >
+
+                    <img src={picture} className='h-full w-full object-cover transition-transform duration-500 group-hover:scale-115' alt="" />
                 </div>
             </div>
             <div className='text-center space-y-1.5'>

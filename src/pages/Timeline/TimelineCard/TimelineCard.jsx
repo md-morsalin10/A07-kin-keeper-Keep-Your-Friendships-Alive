@@ -12,8 +12,11 @@ const TimelineCard = ({ frd, type }) => {
     
 
     return (
-        <div className='flex items-center gap-4 border my-6 p-5 rounded-2xl border-gray-300 bg-base-200'>
-            <div>{icon}</div>
+        <div
+         className='group flex items-center gap-4 border my-6 p-5 rounded-2xl border-gray-300 bg-base-200 transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-lg'>
+            <div
+            className='transition-transform duration-300 group-hover:scale-125'
+            >{icon}</div>
             <div>
                 <h2 className='text-[#244D3F] font-semibold'>
                     {label} <span className='text-[#64748B] font-medium text-[14px]'>With {frd.name}</span>
