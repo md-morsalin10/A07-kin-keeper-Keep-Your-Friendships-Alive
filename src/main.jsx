@@ -10,6 +10,7 @@ import Timeline from './pages/Timeline/Timeline';
 import FriendsDetails from './pages/FriendsDetails/FriendsDetails';
 import FriendsProvider from './context/FriendsProvider';
 import { ToastContainer } from 'react-toastify';
+import ErrorPage from './pages/ErrorPage/ErrorPage';
 
 const router = createBrowserRouter([
   {
@@ -34,7 +35,7 @@ const router = createBrowserRouter([
         element: <StatsPage />
       }
     ],
-    errorElement: <h2>page not found</h2>
+    errorElement: <ErrorPage/>
   },
 ]);
 
