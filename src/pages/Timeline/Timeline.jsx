@@ -25,8 +25,10 @@ const Timeline = () => {
                 </div>
                 <div>
                     <div className="dropdown dropdown-bottom">
-                        <div tabIndex={0} role="button" className="btn text-gray-500 m-1">Short by {filter === "all" ? "⬇️" : filter === "call" ? "call"
-                            : filter === "text" ? "text" : "video"} </div>
+                        <div tabIndex={0} role="button" className="btn text-gray-500 m-1"
+                        >Short by {filter === "all" ? "⬇️" : filter === "call" ? "call"
+                            : filter === "text" ? "text" : "video"} 
+                        </div>
 
                         <ul tabIndex="-1" className="dropdown-content menu bg-base-100  rounded-box z-1 w-52 p-2 shadow-sm">
                             <li onClick={() => setFilter('call')}><a>Call</a></li>
@@ -41,26 +43,27 @@ const Timeline = () => {
             {isDataEmpty && <div>
                 <div className='flex flex-col items-center justify-center py-20 bg-gray-50 rounded-3xl border-2  border-gray-200'>
 
-                    <h3 className='text-xl font-semibold text-gray-500'>No {filter === 'all' ? 'Interactions'
+                    <h3 className='text-xl font-semibold text-gray-500'
+                    >No {filter === 'all' ? 'Interactions'
                         : filter === "call" ? "Call Interactions"
                             : filter === "text" ? "Text Interactions"
                                 : "Video Interactions"} Found</h3>
 
                     <p className='text-gray-400'>There's nothing to show in your timeline right now.</p>
                 </div>
-                </div>}
+            </div>}
 
             <div className='space-y-4'>
                 {(filter === 'all' || filter === 'call') &&
-                    callDetails.map(frd=> <TimelineCard frd={frd} type="call" key={frd.id}></TimelineCard>)
+                    callDetails.map(frd => <TimelineCard frd={frd} type="call" key={frd.id}></TimelineCard>)
                 }
 
                 {(filter === 'all' || filter === 'text') &&
-                    textDetails.map(frd=> <TimelineCard frd={frd} type="text" key={frd.id}></TimelineCard>)
+                    textDetails.map(frd => <TimelineCard frd={frd} type="text" key={frd.id}></TimelineCard>)
                 }
 
                 {(filter === 'all' || filter === 'video') &&
-                    videoDetails.map(frd=> <TimelineCard frd={frd} type="video" key={frd.id}></TimelineCard>)
+                    videoDetails.map(frd => <TimelineCard frd={frd} type="video" key={frd.id}></TimelineCard>)
                 }
             </div>
         </div>

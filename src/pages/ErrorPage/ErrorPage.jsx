@@ -40,7 +40,7 @@ const ErrorPage = () => {
                 </div>
             </div>
 
-            <h1 className="text-3xl md:text-4xl font-extrabold text-center  text-[#244D3F] mb-3">
+            <h1 className="text-3xl md:text-4xl font-extrabold text-center++-  text-[#244D3F] mb-3">
                 This page got lost
             </h1>
             <p className="text-base-content/50 text-base max-w-sm text-center mb-5">
