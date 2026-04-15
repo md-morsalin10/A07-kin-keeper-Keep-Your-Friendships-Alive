@@ -9,11 +9,11 @@ const Navbar = () => {
         <div className='bg-base-100 shadow-sm sticky top-0 z-50'>
             <div className="navbar container mx-auto">
                 <div className="flex-1">
-                    <h3 className='text-[#1F2937] text-xl font-extrabold'>Keen<span className='text-[#244D3F] font-bold'>Keeper</span></h3>
+                    <h3 className='text-[#1F2937] text-lg md:text-xl font-extrabold'>Keen<span className='text-[#244D3F] font-bold'>Keeper</span></h3>
                 </div>
                 <div className="flex-none">
                     <ul className="menu menu-horizontal px-1">
-                        <li className='mr-2'><NavLink
+                        <li className='mr-1 lg:mr-2'><NavLink
                             className={({ isActive }) => isActive ? 'bg-[#244D3F] text-white' : 'text-[#64748B]'}
                             to={"/"}><RiHome4Line />Home</NavLink></li>
 
